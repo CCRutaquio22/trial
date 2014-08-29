@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8"> 
+    <title>Student Directory</title>
+    <link href="../stylesheets/bootstrap.css" rel="stylesheet">
+    <link href="../stylesheets/bootstrap-responsive.css" rel="stylesheet">
+
+    <style type="text/css">
+
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+        color: black;
+        background: #fff;
+      }
+    </style>
+  </head>
+
+
+  <body>
+
+<div id="navbarExample" class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand"><font face="Maiandra GD">Current Student List:</font></a>
+                        <form class="navbar-form pull-right">
+              <a class="btn btn-info" href="/student/create"><font face="Maiandra GD">New Student File</font></a>
+              <a class="btn  btn-warning" href="/student/new"><font face="Maiandra GD">Student Homepage</font></a>
+            </form>
+      </div>
+    </div></div>
+    <br>
+    <br>
+       <table class="table table-hover span12">
+        <tr>
+         <td><font face="Maiandra GD"><strong>Student Number</strong></font></td>
+         <td><font face="Maiandra GD"><strong>First Name</strong></font></td>
+         <td><font face="Maiandra GD"><strong>Last Name</strong></font></td>
+         <td><font face="Maiandra GD"><strong>Department Assigned</strong></font></td>
+         <td><font face="Maiandra GD"><strong>Status</strong></font></td>
+         <td><font face="Maiandra GD"><strong>Email Address</strong></font></td>
+         <td><font face= "Maiandra GD"><strong>Option</strong></td>
+        </tr>
+
+        {% for student in student%}
+        <tr>
+          <td>{{student.StudentNumber}}</a></td>
+          <td>{{student.FirstName}}</td>
+          <td>{{student.LastName}}</td>
+          <td>{{student.Department}}</td>
+          <td>{{student.StudentStatus}}</td>
+          <td>{{student.EmailAddress}}</td>
+          <td><a href="/student/view/{{student.key.id()}}"><font face= "Maiandra GD">View</font></a>
+                  {% if user%}<a href="/student/edit/{{student.key.id()}}"><font face= "Maiandra GD">/ Edit</font></a></td>{% endif%}
+        </tr>
+        {% endfor %}
+
+      </table>
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+  </body>
+</html>

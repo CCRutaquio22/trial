@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html lang="en">
+  <head>
+  <meta charset="utf-8"> 
+    <title>An Adviser File</title>
+    <link href="/stylesheets/bootstrap.css" rel="stylesheet">
+    <link href="/stylesheets/bootstrap-responsive.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+        color: black;
+        background: #fff;
+      }
+    </style>
+  </head>
+
+  <body>
+
+<div id="navbarExample" class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand"><font face="Maiandra GD">You have Viewed the Profile of:</font></a>
+                        <form class="navbar-form pull-right">
+              <a class="btn btn-info" href="/adviser/create"><font face="Maiandra GD">Add A new File</font></a>
+              <a class="btn btn-success" href="/adviser/list"><font face="Maiandra GD">Adviser List</font></a>
+            </form>
+      </div>
+    </div></div>
+		<div class="container">
+        {% for adviser in adviser%}
+        {% if id == adviser.key.id()%}
+        <div><h3><font face="Maiandra GD" size="6">{{adviser.TitleName}} {{adviser.LastName}}, {{adviser.FirstName}}</font></h3></div>
+        <div><strong>Department Location:</strong> {{adviser.Department}}</div>
+        <div><strong>Contact Number:</strong> {{adviser.PhoneNumber}}</div>
+        <div><strong>Email Address:</strong> {{adviser.EmailAddress}}</div>
+        {% endif %}
+        {% endfor %}
+        </div>
+  </body>
+</html>
+{% endautoescape %}

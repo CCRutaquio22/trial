@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8"> 
+    <title>Thesis Directory</title>
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <style type="text/css">
+
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+        color: black;
+        background: #fff;
+      }
+    </style>
+  </head>
+
+  <body>
+
+<div id="navbarExample" class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand"><font face="Maiandra GD">Current Thesis List:</font></a>
+                        <form class="navbar-form pull-right">
+              <a class="btn btn-info" href="/thesis/create"><font face="Maiandra GD">New Thesis File</font></a>
+              <a class="btn btn-warning" href="/thesis/new"><font face="Maiandra GD">Thesis Homepage</font></a>
+            </form>
+      </div>
+    </div></div>
+    <br>
+    <br>
+       <table class="table table-hover span12">
+        <tr>
+
+          <td><font face="Maiandra GD"><strong>Thesis Title</strong></font></td>
+          <td><center><font face="Maiandra GD"><strong>Description</strong></font></center></td>
+          <td><font face="Maiandra GD"><strong>School Year</strong></font></td>
+          <td><font face="Maiandra GD"><strong>Status</strong></font></td>
+          <td><font face="Maiandra GD"><strong>Option</strong></font></td>
+        </tr>
+
+        {% for thesis in thesis%}
+
+        <tr>
+ 
+          <td><font face="Maiandra GD">{{thesis.TitleName}}</a></font></td>
+          <td><font face="Maiandra GD">{{thesis.Description}}</font></td>
+          <td><font face="Maiandra GD">{{thesis.SchoolYear}}</font></td>
+          <td><font face="Maiandra GD">{{thesis.Status}}</font></td>
+          <td><a href="/thesis/view/{{thesis.key.id()}}"><font face= "Maiandra GD">View</font></a>
+        {% if user %}          
+          <a href="/thesis/edit/{{thesis.key.id()}}"><font face= "Maiandra GD">/ Edit</font></a></td>
+                {% endif %}
+        </tr>
+
+        {% endfor %}
+      </table>
+
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+  </body>
+</html>

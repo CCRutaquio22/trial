@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cleo Cynthia Rutaquio</title>
+  <style>
+
+  img{border-color: black; padding: 3px; position: center; text-indent: 15px;}
+  p{text-indent: 14px;}
+  h4{text-indent: 15px;}
+
+  </style>
+</head>
+
+<body background="http://www.surftin.com/images/black-brick-wall-texture-picture-free-graph-public_1492925.jpg">
+<center>
+  <table border="2">
+    <tr>
+      <td><img src="https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xap1/t1.0-9/10500572_353735491445330_5834023904931490370_n.jpg" width="250" height="250" border="5" ><br><font face="Maiandra GD" size="5" color="white"><center>Cleo Cynthia Rutaquio</center></font></td>
+      <center><td><h4><font face="Maiandra GD" size="6" color="#FF1493"><center>Tagline/Quotation:</center></font></h4>
+      <font color ="FFB6C1" size="4" face = "Maiandra GD">
+        <p><center>"Show me a man who is afraid to look bad,<br>and I will show you a man you can beat everytime."</center><br>
+        <font color ="white" size="4" face = "Maiandra GD"><i><center>-Lou Brack</center></i></font></p>
+        </td></center></tr>
+  </table>
+</center>
+<hr>
+<center>
+  <table>
+    <tr>
+    <td><img src="http://pupragaycamsur.weebly.com/uploads/6/8/9/1/6891852/8562073.jpg" height ="100" width="100" border="3"></td>
+      <td><h3><font color="#FF1493" face="Maiandra GD" size="5" ><center>About Me:</center></font></h3>
+        <p><font color ="FFB6C1" size="3" face = "Maiandra GD"><center> My Full name was Cleo Cynthia Valderamos Rutaquio, age 20 years old.
+        <br>I'm in my last year of pursuing Bachelor of Science in Computer Engineering, and<br>Polytechnic University of the Philippines Manila was my alma matter.
+        <br>I really love Clover Chips for Snack.<br>I believe that for someone to trust me fully, they must gain my trust first. :)</center></font></p></td>
+        <td><img src="http://coepup.22web.org/pup%20coe%20website%201/images/COE%20PUP%20logo.jpg" height ="100" width="100" border="3"></td>
+    </tr></table></center>
+    <hr>
+<center><table><tr><td><font color="#FF1493" face="Maiandra GD" size="5"><center>Check out my Network Accounts:</center></font><br></center>
+<center><a href="https://www.facebook.com/CCRutaquio22?ref=tn_tnmn"><img src="https://www.facebook.com/images/fb_icon_325x325.png" alt="Facebook Account" width="100" height="90"></a>
+<a href="https://twitter.com/CCRutaquio22"><img src="http://img3.wikia.nocookie.net/__cb20130329090125/warframe/images/thumb/1/1a/Twitter_logo.png/481px-Twitter_logo.png" alt="Twitter Account" width="100" height="90"></a>
+<a href="http://www.codecademy.com/CCRutaquio22"><img src="http://www.mobilewebheads.com/images/codecademy-logo.jpg" alt="CodeAcademy Account" width="100" height="90"></a>
+<a href="https://github.com/CCRutaquio22"><img src="http://cdns2.freepik.com/free-photo/github-logo_318-10832.jpg" alt="Github Account" width="100" height="90"></a>
+</center></td>
+
+<tr><hr><td><font color="#FF1493" face="Maiandra GD" size="5"><center>or Contact me through:</center></font><br>
+<center><img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSsDyiMspIM-bZTHXkPJHpVq7agT6N7fW5D53UIp-uNRhuUIb4o" alt="Skype Account" width="80" height="80"></a>
+<img src="https://techofficers.com/wp-content/uploads/2013/07/w-phone-icon.png" alt="Telephone" width="80" height="80"></a>
+<img src="http://www.tattooedlies.com/images/email-black-logo.png" alt="Email" width="80" height="80"></a>
+</center></td>
+</tr></table>
+<hr><hr>
+
+<table><tr>
+
+<td><img src="http://31.media.tumblr.com/a418b11c5c519d59490810abde91b709/tumblr_mn0v6tyEsH1rgpyeqo1_400.gif" align="left" height="300" width="400"></td>
+<td><center><font face="Maiandra GD" color="#EE28EE"size="5"><center>Wanna Leave a Note?</center></font><br>
+
+    <form action="/module-1/1/sign?memberone_page={{ memberone_page }}" method="post">
+      <div><textarea name="content" rows="3" cols="60"></textarea></div>
+      <div><input type="submit" value="Sign me a Comment" ></div>
+    </form>
+<br>
+
+    {% for comment in comments %}
+      {% if comment.author %}
+        <font face="Comic Sans MS" color="#C0C0C0" size="3"><b>{{ comment.author.nickname() }}</b> </font>
+        <font face="Comic Sans MS" size="3" color="#C0C0C0"> wrote:</font>
+      {% else %}
+       <font face="Comic Sans MS" size="3" color="#F5FFFA">An</font>
+       <font face="Comic Sans MS" size="4" color="#F5FFFA">anonymous person</font>
+       <font face="Comic Sans MS" size="3" color="#F5FFFA">wrote:</font>
+      {% endif %}
+      <blockquote><font face="Comic Sans MS" size="3" color="#EE28EE">{{ comment.content }}</font></blockquote>
+    {% endfor %}
+
+    <hr>
+    <font face="Maiandra GD" size="5" color="#FF1493">
+    <a href="{{ url|safe }}">{{ url_linktext }}</a></font></center></td>
+    <td><img src="http://dl.glitter-graphics.net/pub/523/523291zem2f5vw6x.gif" align="right" height="300" width="400"></td>
+    <br>
+
+
+</body>
+</html>
+
+
+
+

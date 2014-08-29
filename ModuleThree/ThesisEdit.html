@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html lang="en">
+  <head>
+  <meta charset="utf-8"> 
+    <title>Specific Thesis Edit</title>
+    <link href="/stylesheets/bootstrap.css" rel="stylesheet">
+    <link href="/stylesheets/bootstrap-responsive.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+        color: black;
+        background: #fff;
+      }
+    </style>
+  </head>
+
+  <body>
+<div id="navbarExample" class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+           <div class="container">
+          <a class="brand"><font face="Maiandra GD">Edit Thesis Profile:</font></a>
+                                  <form class="navbar-form pull-right">
+              <a class="btn btn-success" href="/thesis/list"><font face="Maiandra GD">Thesis List</font></a>
+              </form>
+      </div>
+    </div></div>
+    <br>
+        <div class="container">
+
+      <div class="hero-unit">
+            <div data-spy="scroll" data-target="#navbarExample" data-offset="0" class="scrollspy-example">
+
+	{% for thesis in thesisquery %}
+        {% if id == thesis.key.id() %}
+            <div data-spy="scroll" data-target="#navbarExample" data-offset="0" class="scrollspy-example">
+            <form method="POST" action="/thesis/edit/{{thesis.key.id()}}">
+
+		<div><strong><font face="Maiandra GD" size="4">Thesis Title:</font></strong>
+		<input class="input-block-level" type="text" name="TitleName" placeholder="Current Thesis TitleName: {{thesis.TitleName}}" required></div>
+
+		<div><strong><font face="Maiandra GD" size="4">Thesis File Description:</font></strong>
+		<textarea class="input-block-level" name="Description"rows="5" placeholder="Current Thesis Description: {{thesis.Description}}" required></textarea></div>
+
+		<div><strong><font face="Maiandra GD" size="4">School Year:</font></strong>
+		<select name="SchoolYear" placeholder="Current Thesis SchoolYear: {{thesis.SchoolYear}}" required>
+			<option value=""></option>
+			<option value="1998-1999">1998-1999</option>
+			<option value="1999-2000">1999-2000</option>
+			<option value="2000-2001">2000-2001</option>
+			<option value="2002-2003">2002-2003</option>
+			<option value="2004-2005">2004-2005</option>
+			<option value="2005-2006">2005-2006</option>
+			<option value="2006-2007">2006-2007</option>
+			<option value="2007-2008">2007-2008</option>
+			<option value="2008-2009">2008-2009</option>
+			<option value="2001-2002">2009-2010</option>
+			<option value="2010-2011">2010-2011</option>
+			<option value="2011-2012">2011-2012</option>
+			<option value="2012-2013">2012-2013</option>
+			<option value="2013-2014">2013-2014</option>
+			<option value="2014-2015">2014-2015</option>
+			<option value="2015-2016">2015-2016</option>
+			<option value="2016-Present">2016-Present</option>
+
+		</select>
+
+		<div><strong><font face="Maiandra GD" size="4">Thesis Status:</font></strong>
+		<select name="Status" placeholder="Current Thesis Status: {{thesis.Status}}" required>
+			<option value=""></option>
+			<option value="Failed">Failed</option>
+			<option value="For Dropping">For Dropping</option>
+			<option value="On Defense">On Defense</option>
+			<option value="Passed">Passed</option>
+			<option value="Available">Available</option>
+			<option value="UnAvailable">UnAvailable</option>
+		</select>
+</div></div></div>
+
+		<center>
+		<div><input class="btn btn-large btn-info" type="submit">
+		<a class="btn btn-large btn-warning" href="/thesis/list">Cancel</a></div>
+		</center></div></div></form></div>
+
+    </div>
+        {% endif %}
+        {% endfor %}
+
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+  </body>
+</html>
+{% endautoescape %}

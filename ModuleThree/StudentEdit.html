@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html lang="en">
+  <head>
+  <meta charset="utf-8"> 
+    <title>Specific Student Edit</title>
+    <link href="/stylesheets/bootstrap.css" rel="stylesheet">
+    <link href="/stylesheets/bootstrap-responsive.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+        color: black;
+        background: #fff;
+      }
+    </style>
+  </head>
+
+  <body>
+<div id="navbarExample" class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+           <div class="container">
+          <a class="brand"><font face="Maiandra GD">Edit Student Profile:</font></a>
+                                  <form class="navbar-form pull-right">
+              <a class="btn btn-success" href="/student/list"><font face="Maiandra GD">Student List</font></a>
+              </form>
+      </div>
+    </div></div>
+    <br>
+        <div class="container">
+
+      <div class="hero-unit">
+            <div data-spy="scroll" data-target="#navbarExample" data-offset="0" class="scrollspy-example">
+
+	{% for student in student %}
+        {% if id == student.key.id() %}
+            <div data-spy="scroll" data-target="#navbarExample" data-offset="0" class="scrollspy-example">
+            <form method="POST" action="/student/edit/{{student.key.id()}}">
+
+		<div>
+			<strong><font face="Maiandra GD" size="4">Student Status:</font></strong>
+			<select	class="input-medium" name="StudentStatus" required>
+			<option value=""></option>
+			<option value="Regular">Regular</option>
+			<option value="Irregular">Irregular</option>
+			<option value="Dropped.">Dropped</option>
+			<option value="Withdrawn">Withdrawn</option>
+			<option value="Alumni	">Alumni</option>
+			</select>
+		</div>
+		<div><strong><font face="Maiandra GD" size="4">First Name:</font></strong>
+		<input class ="input-xlarge" type="text" name="FirstName" placeholder="Current FirstName: {{student.FirstName}}" required></div>
+
+		<div><strong><font face="Maiandra GD" size="4">Last Name:</font></strong>
+		<input class="input-xlarge" type="text" name="LastName" placeholder="Current LastName: {{student.LastName}}" required></div>
+
+		<div class="4"><strong><font face="Maiandra GD" size="4">Email Address:</font></strong>
+		<input class="input-xxlarge" type="email" name="EmailAddress" placeholder="Current EmailAddress: {{student.EmailAddress}}" required></div>
+
+		<div class="4"><strong><font face="Maiandra GD" size="4">Student Number:</font></strong>
+		<input class="input-xxlarge" type="text" name="StudentNumber" placeholder="Current StudentNumber: {{student.StudentNumber}}" required></div>
+
+			<strong><font face="Maiandra GD" size="4">College Department Location:</font></strong>
+			<select	class="input-xlarge" name="Department" required>
+			<option value=""></option>
+			<option value="Computer Engineering">Computer Engineering</option>
+			<option value="Civil Engineering">Civil Engineering</option>
+			<option value="Electronics and Communications Engineering">Electronics and Communications Engineering</option>
+			<option value="Electrical Engineering">Electrical Engineering</option>
+			<option value="Industrial Engineering">Industrial Engineering</option>
+			<option value="Mechanical Engineering">Mechanical Engineering</option>
+			</select>
+</div>
+		<center>
+		<div><input class="btn btn-large btn-info" type="submit">
+				<a class="btn btn-large btn-warning" href="/student/list">Cancel</a></div>
+        </form></div></div>
+
+        {% endif %}
+        {% endfor %}
+
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+  </body>
+</html>
+{% endautoescape %}

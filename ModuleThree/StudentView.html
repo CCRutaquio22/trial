@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html lang="en">
+  <head>
+  <meta charset="utf-8"> 
+    <title>Specific Students View</title>
+    <link href="/stylesheets/bootstrap.css" rel="stylesheet">
+    <link href="/stylesheets/bootstrap-responsive.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+        color: black;
+        background: #fff;
+      }
+    </style>
+  </head>
+
+  <body>
+
+<div id="navbarExample" class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand"><font face="Maiandra GD">Student Profile of:</font></a>
+                        <form class="navbar-form pull-right">
+              <a class="btn btn-info" href="/student/create"><font face="Maiandra GD">Add A new File</font></a>
+              <a class="btn btn-success" href="/student/list"><font face="Maiandra GD">Student List</font></a>
+            </form>
+      </div>
+    </div></div>
+		<div class="container">
+        {% for student in student%}
+        {% if id == student.key.id()%}
+        <div><h2><font face="Maiandra GD" size="6">{{student.LastName}}, {{student.FirstName}}</font></h2></div>
+        <div><font face="Maiandra GD" size="4"><strong>Student Status:</strong> {{student.StudentStatus}}</font></div>
+        <div><font face="Maiandra GD" size="4"><strong>Student Number:</strong> {{student.StudentNumber}}</font></div>
+        <div><font face="Maiandra GD" size="4"><strong>Course Name:</strong> Bachelor of Science in {{student.Department}}</font></div>
+        <div><font face="Maiandra GD" size="4"><strong>Email Address:</strong> {{student.EmailAddress}}</font></div>
+        {% endif %}
+        {% endfor %}
+        </div>
+  </body>
+</html>
+{% endautoescape %}

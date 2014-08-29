@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html lang="en">
+  <head>
+  <meta charset=”utf-8”> 
+    <title>Sign GuestBook</title>
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+        color: black;}
+    </style>
+  </head>
+
+  <body>
+
+<div id="navbarExample" class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+           <div class="container">
+          <a class="brand"><font face="Maiandra GD">coe2043-team-1</font></a>
+            <form class="navbar-form pull-right">
+              <a class="btn btn-success" href="/"><font face="Maiandra GD">Back to Homepage</font></a>
+              <a class="btn btn-primary" href="{{ url|safe }}"><font face="Maiandra GD">{{ url_linktext }}</font></a>
+            </form>
+          </div>
+    </div>
+    	</div>
+        
+ <div class="container">
+      <div class="hero-unit">
+            <div data-spy="scroll" data-target="#navbarExample" data-offset="0" class="scrollspy-example">
+<center><h2> <font face="Maiandra GD">Guestbook</font> </h2></center>
+    <center><form action="/sign?guestbook_name={{ guestbook_name }}" method="post">
+      <div><textarea class="input-xxlarge" name="content" rows="5" cols="60" placeholder="Type your comments here.." required></textarea></div>
+      <div><font face="Maiandra GD"><input type="submit" value="Sign Guestbook"></font></div>
+    </form></center>
+</div></div></div>
+	
+ <div class="container">
+      <div class="hero-unit">
+
+	{% for greeting in greetings %}
+     <center> {% if greeting.author %}
+        <b><font face="Maiandra GD">{{ greeting.author.nickname() }}</b> wrote:</font>
+      {% else %}
+       <font face="Maiandra GD">A Guest wrote:</font>
+      {% endif %}
+      <blockquote><font face="Maiandra GD">{{ greeting.content }}</font></blockquote>
+    {% endfor %}</center>
+</b></center></div></div>
+    <hr>
+<center>
+    <form><font face="Maiandra GD">Guestbook name:</font>
+      <input value="{{ guestbook_name }}" name="guestbook_name">
+      <input type="submit" value="switch">
+    </form>
+</center>
+
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+
+    
+  </body>
+</html>
+{% endautoescape %}

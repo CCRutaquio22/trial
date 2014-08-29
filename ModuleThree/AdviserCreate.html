@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html lang="en">
+  <head>
+  <meta charset=”utf-8”> 
+    <title>Create New Adviser File</title>
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+        color: black;}
+    </style>
+  </head>
+
+  <body>
+      {% if user%}
+<div id="navbarExample" class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+           <div class="container">
+          <a class="brand"><font face="Maiandra GD">coe2043-team-1</font></a>
+          </div>
+    </div>
+    	</div>
+        
+ <div class="container">
+      <div class="hero-unit">
+            <div data-spy="scroll" data-target="#navbarExample" data-offset="0" class="scrollspy-example">
+				<h2> <font face="Maiandra GD">Register an Adviser.</font> </h2>
+				<p>To add a new Adviser Record, fill up the corresponding textboxes below.</p></div><hr>
+	
+		<form method="POST" action="/adviser/create">
+		
+		<div>
+			<strong><font face="Maiandra GD" size="4">Title:</font></strong>
+			<select	class="input-medium" name="TitleName" required>
+			<option value=""></option>
+			<option value="Ms.">Ms.</option>
+			<option value="Mr.">Mr.</option>
+			<option value="Mrs.">Mrs.</option>
+			<option value="Dr.">Dr.</option>
+			<option value="Engr.">Engr.</option>
+			</select>
+		</div>
+		<div><strong><font face="Maiandra GD" size="4">First Name:</font></strong>
+		<input class ="input-xlarge" type="text" name="FirstName" required></div>
+
+		<div><strong><font face="Maiandra GD" size="4">Last Name:</font></strong>
+		<input class="input-xlarge" type="text" name="LastName" required></div>
+		
+		<div class="control-group">
+        <div class="controls">
+        <div class="input-prepend">
+        <label class="control-label" for="inputIcon"><strong><font face="Maiandra GD" size="4">Email Address:
+        <span class="add-on"><i class="icon-envelope"></i></span>
+        <input class=" input-xxlarge" id="inputIcon" type="email" name="EmailAddress" required></font></strong></label>
+        </div>
+        </div>
+        </div>
+
+		<div class="4"><strong><font face="Maiandra GD" size="4">Phone Number:</font></strong>
+		<input class="input-xxlarge" type="text" name="PhoneNumber" required></div>
+
+			<strong><font face="Maiandra GD" size="4">Department Location:</font></strong>
+			<select	class="input-xlarge" name="Department" required>
+			<option value=""></option>
+			<option value="Computer Engineering">Computer Engineering</option>
+			<option value="Civil Engineering">Civil Engineering</option>
+			<option value="Electronics and Communications Engineering">Electronics and Communications Engineering</option>
+			<option value="Electrical Engineering">Electrical Engineering</option>
+			<option value="Industrial Engineering">Industrial Engineering</option>
+			<option value="Mechanical Engineering">Mechanical Engineering</option>
+			</select>
+</div>
+		<center>
+		<div><input class="btn btn-large btn-info" type="submit">
+				<a class="btn btn-large btn-warning" href="/adviser/new">Cancel</a></div>
+        </form></div>
+
+
+  {% else%}
+<div id="navbarExample" class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+           <div class="container">
+          <a class="brand"><font face="Maiandra GD">coe2043-team-1</font></a>
+                        <form class="navbar-form pull-right">
+                                      <a class="btn btn-success" href="/"><font face="Maiandra GD">HomePage</font></a>
+
+      </div>
+    </div></div>
+    <br>
+<div class="container">
+      <div class="hero-unit">
+            <div data-spy="scroll" data-target="#navbarExample" data-offset="0" class="scrollspy-example">
+				<h2> <font face="Maiandra GD">New Adviser Record.</font> </h2></div>
+		<div class="alert">
+ 			 <button type="button" class="close" data-dismiss="alert">&times;</button>
+ 			 <strong>Note!</strong> Log In to Create a New File.
+			</div>
+
+{% endif%}</div>
+
+
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+
+    
+  </body>
+</html>
+{% endautoescape %}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html lang="en">
+  <head>
+  <meta charset="utf-8"> 
+    <title>Specific thesis View</title>
+    <link href="/stylesheets/bootstrap.css" rel="stylesheet">
+    <link href="/stylesheets/bootstrap-responsive.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+        color: black;
+        background: #fff;
+      }
+    </style>
+  </head>
+
+  <body>
+
+<div id="navbarExample" class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+
+          <a class="brand"><font face="Maiandra GD">Thesis File Information:</font></a>
+                        <form class="navbar-form pull-right">
+              <a class="btn btn-info" href="/thesis/create"><font face="Maiandra GD">Add A new File</font></a>
+              <a class="btn btn-success" href="/thesis/list"><font face="Maiandra GD">Thesis List</font></a>
+            </form>
+      </div>
+    </div></div>
+    
+		<div class="container">
+                {% for thesis in thesis%}
+        {% if id == thesis.key.id()%}
+
+        <div><h3><font face="Maiandra GD" size="6"> {{thesis.TitleName}}</font></h3></div><hr>
+        <div><strong>School Year Presented:</strong> {{thesis.SchoolYear}}</div><hr>
+        <div><strong>Thesis Status:</strong> {{thesis.Status}}</div><hr>
+        <div><strong>Thesis Description:</strong><p>{{thesis.Description}}</p></div>
+
+        {% endif %}
+        {% endfor %}
+        </div>
+        
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+  </body>
+</html>
+{% endautoescape %}

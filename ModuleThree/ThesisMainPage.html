@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+{% autoescape true %}
+
+<html lang="en">
+  <head>
+  <meta charset=”utf-8”> 
+    <title>Thesis Main Page</title>
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+        color: black;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    {% if user%}
+<div id="navbarExample" class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+           <div class="container">
+          <a class="brand"><font face="Maiandra GD">coe2043-team-1</font></a>
+              <form class="navbar-form pull-right">
+              <a class="btn btn-info" href="/thesis/create"><font face="Maiandra GD">New File</font></a>
+              <a class="btn btn-warning" href="/thesis/list"><font face="Maiandra GD">Thesis Directory</font></a>
+              <a class="btn btn-success" href="/"><font face="Maiandra GD">HomePage</font></a>
+            </form>
+
+      </div>
+    </div></div>
+    <br>
+    <br>
+
+        <div class="container">
+
+      <div class="hero-unit">
+            <div data-spy="scroll" data-target="#navbarExample" data-offset="0" class="scrollspy-example">
+            <h2><font face="Maiandra GD" size="8">Thesis Management System.</font></h2><br>
+        <div class="bs-docs-example">
+              <div class="accordion" id="accordion2">
+                <div class="accordion-group">
+                  <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                      Adding a New Thesis File
+                    </a>
+                  </div>
+                  <div id="collapseOne" class="accordion-body collapse in">
+                    <div class="accordion-inner">
+                      This feature lets you add new thesis records and files for easy viewing and for future reference. All compiled in the thesis Directory where the user can view the thesis details like the year it was presented, the thesis status (passed/failed), and other supporting details for the user's convinience. 
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-group">
+                  <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+                      Viewing the Thesis Database
+                    </a>
+                  </div>
+                  <div id="collapseTwo" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                      This feature lets you browse from all the thesis topics included and encoded in this Thesis Management Directory.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-group">
+                  <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+                      Importance
+                    </a>
+                  </div>
+                  <div id="collapseThree" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                       This Thesis Management System allows you to manage and use an incredible variety of information easily. It was easy to set-up, easy to manipulate and easy to use. This application allows you to view add and interact with other users with order by sharing in what could be a very chaotic informations through a sytem environment.
+</div></div></div></div></div></div></div>
+
+{% else%}
+
+<div id="navbarExample" class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+           <div class="container">
+          <a class="brand"><font face="Maiandra GD">coe2043-team-1</font></a>
+              <form class="navbar-form pull-right">
+              <a class="btn btn-warning" href="/thesis/list"><font face="Maiandra GD">Thesis Directory</font></a>
+              <a class="btn btn-success" href="/"><font face="Maiandra GD">HomePage</font></a>
+            </form>
+
+      </div>
+    </div></div>
+    <br>
+    <br>       
+
+        <div class="container">
+
+      <div class="hero-unit">
+            <div data-spy="scroll" data-target="#navbarExample" data-offset="0" class="scrollspy-example">
+            <h2><font face="Maiandra GD" size="8">Thesis Management System.</font></h2><br>
+            <div class="alert">
+ 			 <button type="button" class="close" data-dismiss="alert">&times;</button>
+ 			 <strong>Note!</strong> Log In to Access full Application.
+			</div>
+        <div class="bs-docs-example">
+              </div>
+{% endif%}
+    </div>
+
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+  </body>
+</html>
+
+{% endautoescape %}
